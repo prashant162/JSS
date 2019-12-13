@@ -1,5 +1,6 @@
 # Using a Custom Route Type enables adding more field data to the route level.
 template: ExampleCustomRouteType
+# This is route level field for the MyFirstComponent
 fields:
   # Note that custom route types inherit from the default route type automatically.
   # This is what makes the `pageTitle` field available here, when it's not defined on the custom route type.
@@ -10,6 +11,7 @@ fields:
 placeholders:
   jss-main:
   - componentName: MyFirstComponent
-    fields:
+  # This is component level field for thhe MyFirstComponent
+    fields: 
       somethingNew: This data is coming from the Something new field
-      heading: This is the heading of the MyFirstComponent component
+      heading: This is the heading of the MyFirstComponent component 
