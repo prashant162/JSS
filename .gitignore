@@ -1,3 +1,6 @@
 .vs
 /packages
 /SitecoreJss93/bin
+/SitecoreJss93/obj
+/SitecoreJss93/Properties
+/SitecoreJss93/*.user

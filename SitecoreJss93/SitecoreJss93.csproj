@@ -48,6 +48,12 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.AppServices, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.JavaScriptServices.AppServices.14.0.0\lib\net471\Sitecore.JavaScriptServices.AppServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.Configuration, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.JavaScriptServices.Configuration.14.0.0\lib\net471\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.NoReferences.9.0.180604\lib\NET462\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -55,10 +61,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Sitecore.LayoutService.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.LayoutService.Mvc, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Sitecore.LayoutService.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Mvc, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Mvc.NoReferences.9.0.180604\lib\NET462\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.FileSystem.Primitives" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Threading.Thread" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -111,7 +127,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DescendantsTreeRenderingContentsResolver.cs" />
+    <Compile Include="Extension\DescendantsTreeRenderingContentsResolver.cs" />
+    <Compile Include="Extension\ProcessRenderingOnImport.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -120,6 +137,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
