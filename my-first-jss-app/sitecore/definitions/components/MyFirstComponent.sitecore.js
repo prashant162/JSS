@@ -13,7 +13,8 @@ export default function(manifest) {
     fields: [
       { name: 'somethingNew', type: CommonFieldTypes.SingleLineText },
       { name: 'heading', type: CommonFieldTypes.SingleLineText},
-    ],
+      ],
+      contentResolverItem: 'Rendering Contents Resolvers/Descendants Tree Rendering Contents Resolver',
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
     register it here, or components added to that placeholder will not be returned by Sitecore:
