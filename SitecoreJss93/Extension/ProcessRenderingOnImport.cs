@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using Sitecore.JavaScriptServices.AppServices.Data;
 using Sitecore.JavaScriptServices.AppServices.Datasources;
 using Sitecore.JavaScriptServices.AppServices.Models;
@@ -26,13 +27,15 @@ namespace SitecoreJss93.Extension
                 return renderingItem;
             }
 
+            Log.Info("Rendering name is: " + renderingDef.Name, this);
 
-            renderingItem.Editing.BeginEdit();
-            renderingItem.Fields["{B0B15510-B138-470E-8F33-8DA2E228AAFE}"].Value = renderingDef.AdditionalData["contentResolverItem"].ToString();
-            renderingItem.Editing.EndEdit();
-
-
-
+            if (renderingDef.Name == "Navigation")
+            {
+                renderingItem.Editing.BeginEdit();
+                renderingItem.Fields["{B0B15510-B138-470E-8F33-8DA2E228AAFE}"].Value = renderingDef.AdditionalData["contentResolverItem"].ToString();
+                renderingItem.Editing.EndEdit();
+            }
+            
             return renderingItem;
         }
     }

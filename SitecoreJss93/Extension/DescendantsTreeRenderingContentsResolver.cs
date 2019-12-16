@@ -15,16 +15,21 @@ namespace SitecoreJss93
         public object ResolveContents(Rendering rendering, IRenderingConfiguration renderingConfig)
         {
             //if you want to access the datasource item
-            var datasource = !string.IsNullOrEmpty(rendering.DataSource)
-                ? rendering.RenderingItem?.Database.GetItem(rendering.DataSource)
-                : null;
+            //var datasource = !string.IsNullOrEmpty(rendering.DataSource)
+            //    ? rendering.RenderingItem?.Database.GetItem(rendering.DataSource)
+            //    : null;
 
             return new
             {
-                somethingNew = new { datasource.Fields["somethingNew"]?.Value },
-                heading = new { datasource.Fields["heading"]?.Value },
-                name = new { value = datasource.Name },
-                contextItem = new {value = Sitecore.Context.Item.Name},
+                path = new { 
+                    value = new { 
+                        href = Sitecore.Context.Item.Paths.Path.Replace("/sitecore/content/my-first-jss-app", string.Empty), 
+                        id = Sitecore.Context.Item.ID, 
+                        text = Sitecore.Context.Item.Name, 
+                        linktype = "internal" 
+                    }
+                },
+                childPages = new { value = Sitecore.Context.Item.Children},
             };
         }
 
