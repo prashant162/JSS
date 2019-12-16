@@ -21,11 +21,10 @@ namespace SitecoreJss93
 
             return new
             {
-                somethingNew = datasource.Fields["somethingNew"]?.Value,
-                heading = datasource.Fields["heading"]?.Value,
-                name = datasource.Name,
-                date = DateTime.Now,
-                hello = "world"
+                somethingNew = new { datasource.Fields["somethingNew"]?.Value },
+                heading = new { datasource.Fields["heading"]?.Value },
+                name = new { value = datasource.Name },
+                contextItem = new {value = Sitecore.Context.Item.Name},
             };
         }
 
