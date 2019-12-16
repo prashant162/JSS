@@ -1,0 +1,17 @@
+# Using a Custom Route Type enables adding more field data to the route level.
+# template: JobList
+# This is route level field for the MyFirstComponent
+fields:
+  # Note that custom route types inherit from the default route type automatically.
+  # This is what makes the `pageTitle` field available here, when it's not defined on the custom route type.
+  ContactUsPageTitle: Contact Us
+  ContactUsHeadline: Contact Us
+  ContactUsAuthor: Prashant Tomar
+  ContactUsContent: <p>Custom route type fields are good for things like articles, where you may wish to have a filter UI on content fields, such as author or category. Route level fields are easy to query against, whereas component-level fields are not because it's possible to remove a component from a route. Note that route level fields <em>cannot be personalized</em> because you cannot conditionally swap out the route item for a different content item.</p>
+placeholders:
+  jss-main:
+  - componentName: MyFirstComponent
+  # This is component level field for the MyFirstComponent
+    fields: 
+      somethingNew: This is same MyFirstComponent applied on the Contact Us page
+      heading: This is the MyFirstComponent heading, applied on the Contact Us page
