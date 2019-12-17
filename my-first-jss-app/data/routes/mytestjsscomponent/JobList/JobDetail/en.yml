@@ -1,5 +1,5 @@
 # Using a Custom Route Type enables adding more field data to the route level.
-# template: JobDetail
+template: JobDetail
 # This is route level field for the MyFirstComponent
 fields:
   # Note that custom route types inherit from the default route type automatically.
